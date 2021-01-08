@@ -9,6 +9,9 @@
                 margin: 0;
                 padding: 0;
             }
+            input{
+                width: 100%;
+            }
         </style>
         <script src="openseadragon.min.js"></script>
         <script type="text/javascript">
@@ -26,8 +29,12 @@
         </script>    </head>
     <body onload="start()">
         <div id="container" style="width: 100%; height: 100%;">
-            Please specify a DeepZoom pyramid source:<br>
-            <input id="dzi" value="https://object.cscs.ch/v1/AUTH_08c08f9f119744cbbf77e216988da3eb/imgsvc-dev-387737c3-3078-43b7-9ab3-f7289053f81a/hbp-00169_482_R605_2002__s068.dzi"><button onclick="location.search = '?' + dzi.value">Go</button>
+            <h1>OpenSeadragon launcher</h1>
+            <p>Please specify a DeepZoom pyramid source (complete link to .xml or .dzi file, as the pre-filled example shows) and click on the Go button.</p>
+            <p>
+                <input id="dzi" value="https://object.cscs.ch/v1/AUTH_08c08f9f119744cbbf77e216988da3eb/imgsvc-dev-387737c3-3078-43b7-9ab3-f7289053f81a/hbp-00169_482_R605_2002__s068.dzi"><br>
+                <button onclick="location.search = '?' + dzi.value">Go</button>
+            </p>
         </div>
     </body>
 </html>
