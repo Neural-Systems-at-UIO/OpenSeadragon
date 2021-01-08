@@ -1,0 +1,34 @@
+<!--<!DOCTYPE html>-->
+<html>
+    <head>
+        <title>OpenSeadragon</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html,body,div{
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script src="openseadragon.min.js"></script>
+        <script type="text/javascript">
+            var viewer;
+            function start() {
+                if (location.search.length > 1) {
+                    container.innerHTML = "";
+                    viewer = OpenSeadragon({
+                        id: "container",
+                        prefixUrl: "images/",
+                        tileSources: location.search.substring(1)
+                    });
+                }
+            }
+        </script>    </head>
+    <body onload="start()">
+        <div id="container" style="width: 100%; height: 100%;">
+            Please specify a DeepZoom pyramid source:<br>
+            <input id="dzi" value="https://object.cscs.ch/v1/AUTH_08c08f9f119744cbbf77e216988da3eb/imgsvc-dev-387737c3-3078-43b7-9ab3-f7289053f81a/hbp-00169_482_R605_2002__s068.dzi"><button onclick="location.search = '?' + dzi.value">Go</button>
+        </div>
+    </body>
+</html>
+
